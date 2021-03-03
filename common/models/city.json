@@ -1,0 +1,32 @@
+{
+  "name": "city",
+  "plural": "cities",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "string": {
+      "type": "string",
+      "required": true,
+      "default": "y"
+    },
+    "city": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "regions": {
+      "type": "hasMany",
+      "model": "Region",
+      "foreignKey": "cityId",
+      "options": {
+        "disableInclude": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
